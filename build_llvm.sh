@@ -49,7 +49,7 @@ fi
 PYTHONPATH=`which python2.7 | sed -e "s_/python2.7\\\$__"`
 PROCESSOR=`uname -p`
 SYSTEM=`uname -s`
-TARGET_TRIPLE=`$CC 2>&1 | grep ": ${PROCESSOR}-" | head -n 1 | sed "s/^..*: //"`
+TARGET_TRIPLE=`$CC -v 2>&1 | grep ": ${PROCESSOR}-" | head -n 1 | sed "s/^..*: //"`
 REPO="http://llvm.org/svn/llvm-project"
 
 echo "最新版の確認中・・・" >&2
