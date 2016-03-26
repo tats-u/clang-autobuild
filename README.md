@@ -12,6 +12,14 @@ CentOS 6～ + GCC4.7～
 - porgもしくはpaco(ソースビルドしたソフトウェアの管理ソフト)
 - その他Clangのビルドに必要なライブラリなど
 
+##インストールするモジュール
+- LLVM
+- Clang
+- Compiler-RT
+##インストールしないモジュール
+- **extra Clang Tools**
+- libc++
+
 ##注意
 CentOS 6では予め最新版のGCCをソースビルドしておく必要があります。
 
