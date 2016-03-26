@@ -17,16 +17,12 @@ CentOS 6では予め最新版のGCCをソースビルドしておく必要があ
 
 ##使用方法
 1. `build_llvm.sh`をダウンロードします。
-
 ```Bash
 wget https://raw.githubusercontent.com/tats-u/clang-autobuild/master/build_llvm.sh
 ```
-
 2. ダウンロードした`build_llvm.sh`を開いて、設定項目をいじります。
 3. 最後に、端末から
-
 ```Bash
 sh ./build_llvm.sh
 ```
-
 を実行します。
