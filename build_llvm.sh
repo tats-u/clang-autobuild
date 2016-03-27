@@ -61,6 +61,14 @@ for dir in `svn ls ${REPO}/llvm/tags | grep RELEASE_ | sort -r`; do
 	break
     fi
 done
+
+if which clang > /dev/null 2>&1; then
+    if clang --version | head -n 1 | fgrep "version ${VERSION}" > /dev/null; then
+	echo "お使いのClang ${VERSION} は最新版です。" >&2
+	exit 2
+    fi
+fi
+
 echo "最新版、バージョン ${VERSION} をインストールします。" >&2
 
 echo "ソースコードをダウンロード中・・・" >&2
