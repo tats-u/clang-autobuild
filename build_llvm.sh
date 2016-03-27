@@ -63,7 +63,7 @@ for dir in `svn ls ${REPO}/llvm/tags | grep RELEASE_ | sort -r`; do
 done
 echo "最新版、バージョン ${VERSION} をインストールします。" >&2
 
-echo "ソースコードをダウンロード中・・・" > &2
+echo "ソースコードをダウンロード中・・・" >&2
 
 if cd llvm > /dev/null 2>&1 ; then
     svn sw ${REPO}/llvm/tags/RELEASE_${VERSION2}/final .
