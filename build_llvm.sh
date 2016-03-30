@@ -113,10 +113,12 @@ echo "ビルド中・・・" >&2
 
 $MAKE_BEFORE $BUILD_BEFORE make $MAKE_FLAGS $BUILD_FLAGS
 
-echo "前バージョンの削除中・・・" >&2
-$SUDO $PORG -br clang || $SUDO $PORG -br llvm || test 0
+set +e
+echo "旧バージョンの削除中・・・(ある場合)" >&2
+$SUDO $PORG -br clang || $SUDO $PORG -br llvm
 
 echo "インストール中・・・" >&2
+set -e
 $SUDO $PORG -lD "${MAKE_BEFORE} ${INSTALL_BEFORE} make install ${MAKE_FLAGS} ${INSTALL_FLAGS}"
 
 echo "Clang ${VERSION} のインストールが完了しました！" >&2
